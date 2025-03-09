@@ -1,0 +1,833 @@
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        list-style: none;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #f4f4f4; /* Light grey for a modern feel */
+        color: #333;
+        overflow-x: hidden; /* Prevents horizontal scroll */
+    }
+
+    /* Header - Fixed Navbar */
+    /* Base styles (same as you provided) */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.85); /* Semi-transparent dark header */
+        padding: 15px 12%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Logo */
+    .logo-img {
+        width: 15vw; /* Adjust size as needed */
+        height: 8vh;
+        transition: transform 0.3s ease;
+        padding-right: 5%;
+    }
+
+    .logo-img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Navbar Links */
+    .navbar {
+        display: flex;
+        gap: 25px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-bottom: 3px solid transparent;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar a:hover,
+    .navbar a:focus {
+        color: #ff4500;
+        border-bottom: 3px solid #ff4500;
+    }
+
+    /* Contact Button */
+    .contact {
+        padding: 10px 22px;
+        background: orangered;
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+    }
+
+    .contact:hover {
+        background-color: orangered;
+        color: white;
+        border: 2px solid orangered;
+        box-shadow: 0 0 15px orangered;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .header {
+            padding: 10px 5%; /* Adjust padding for smaller screens */
+        }
+
+        /* Make the navbar stack vertically for smaller screens */
+        .navbar {
+            flex-direction: column;
+            gap: 10px; /* Reduce gap between navbar items */
+            align-items: center; /* Center navbar links */
+        }
+
+        /* Logo size adjustment */
+        .logo-img {
+            width: 25vw; /* Make logo smaller on smaller screens */
+            height: auto; /* Let height adjust proportionally */
+        }
+
+        /* Adjust the contact button padding */
+        .contact {
+            padding: 8px 18px;
+            font-size: 16px; /* Slightly smaller font size */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header {
+            padding: 8px 3%; /* Adjust for very small screens */
+        }
+
+        .navbar {
+            flex-direction: column;
+            gap: 8px; /* Even smaller gap between navbar items */
+        }
+
+        .logo-img {
+            width: 30vw; /* Further reduce logo size */
+        }
+
+        .contact {
+            padding: 6px 16px; /* Reduce padding for small screens */
+            font-size: 14px; /* Make the font smaller */
+        }
+    }
+
+/* Overview Section */
+.overview {
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the left */
+    text-align: left;
+    padding: 30px 5%; /* Reduces left padding for closer alignment */
+    color: white;
+    position: relative;
+    background: url('nvidia.jpg') no-repeat center center/cover;
+}
+
+/* Dark Overlay Effect */
+.overview::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+    z-index: 0;
+}
+
+/* Overview Text */
+.overview p {
+    position: relative;
+    font-size: 22px;
+    line-height: 1.6;
+    max-width: 550px; /* Reduces width to keep text compact */
+    text-align: left; /* Ensures text stays left-aligned */
+    z-index: 1;
+}
+
+
+/* Animation for Overview Text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 8%;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .overview p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .overview {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .overview p {
+        font-size: 18px;
+    }
+}
+
+/* Main container for Products & Services */
+.products {
+    text-align: center;
+    padding: 80px 8%;
+    background: #ddd;
+    color: white;
+}
+
+/* Section heading */
+.products h2 {
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Curved underline effect */
+.products h2::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: rotate(-1.5deg);
+}
+
+/* Grid container for products */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Adjust last row (2 items centered) */
+.products-container .product-card:nth-child(n+4) {
+    grid-column: span 1;
+    justify-self: center;
+}
+
+/* Product card */
+.product-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.2);
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 0px 25px rgba(255, 69, 0, 0.9);
+}
+
+/* Product image */
+.product-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Slight enlargement on hover */
+.product-card:hover img {
+    transform: scale(1.15);
+}
+
+/* Product name */
+.product-card h3 {
+    font-size: 22px;
+    color: orangered;
+    margin-bottom: 12px;
+}
+
+/* Product description */
+.product-card p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Button */
+.product-card .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    background: orangered;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 10px rgba(255, 69, 0, 0.5);
+}
+
+/* Button hover */
+.product-card .btn:hover {
+    background: orange;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .products-container {
+        grid-template-columns: 1fr; /* 1 per row for mobile */
+    }
+}
+
+/* Styling for the Career Section */
+.career {
+    background: linear-gradient(to right, #0046be, #0078d4, #00a2ff);
+    color: #ffffff;
+    padding: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+}
+
+.career h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 3px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 3%;
+}
+
+.career h3 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    color: #ffcc00;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.career h3:hover {
+    color: #ffffff; /* Hover effect for section headings */
+}
+
+.career p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.career ul {
+    list-style: none;
+    padding: 0;
+}
+
+.career ul li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.career ul li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.career a {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.career a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Table Styling */
+#employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 10px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#employeeTable th,
+#employeeTable td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#employeeTable th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+#employeeTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#employeeTable tr:hover {
+    background-color: #ddd;
+}
+
+#employeeTable td {
+    font-size: 14px;
+}
+
+/* Styling for percentages */
+#employeeTable td:nth-child(4) {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Chart Styling */
+#employeeChart {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Table Design */
+@media (max-width: 1024px) {
+    #employeeTable {
+        font-size: 14px;
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 10px;
+    }
+
+    .career h3 {
+        font-size: 1.6rem; /* Smaller heading for tablets */
+    }
+}
+
+/* Mobile-Responsive Design */
+@media (max-width: 768px) {
+    .career {
+        padding: 20px;
+    }
+
+    .career h2 {
+        font-size: 2rem; /* Smaller font size for headings on mobile */
+    }
+
+    .career h3 {
+        font-size: 1.4rem; /* Smaller heading on mobile */
+    }
+
+    .career ul li {
+        font-size: 1rem; /* Adjust list item font size for mobile */
+        padding: 10px;
+    }
+
+    #employeeTable {
+        font-size: 12px;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap; /* Ensure table data doesn't break */
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 8px;
+    }
+
+    #employeeChart {
+        height: 300px; /* Adjust chart height on mobile */
+    }
+}
+
+/* Very Small Screen (Mobile) */
+@media (max-width: 480px) {
+    .career {
+        padding: 15px;
+    }
+
+    .career h2 {
+        font-size: 1.8rem; /* Even smaller font size for smaller screens */
+    }
+
+    .career h3 {
+        font-size: 1.2rem;
+    }
+
+    .career ul li {
+        font-size: 0.9rem; /* Further reduced list item size */
+        padding: 8px;
+    }
+
+    #employeeTable {
+        font-size: 10px; /* Smaller font for very small screens */
+    }
+
+    #employeeChart {
+        height: 250px; /* Even smaller chart height for very small screens */
+    }
+}
+
+
+/* Financials Section */
+.financials {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 30px;
+}
+
+/* Financials Heading */
+.financials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; /* Adjust heading color to match the section */
+}
+
+/* Table Container for Financials */
+.financials .table-container {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling inside Financials */
+.financials table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.financials th, .financials td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Financials Table Header */
+.financials th {
+    background-color: #0078d4;
+    color: white;
+    font-weight: bold;
+}
+
+/* Styling for Financials Table Data */
+.financials td {
+    color: #333;
+}
+
+/* Stock Price Styling */
+#stock-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0078d4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* Adjust table for tablets */
+    .financials table {
+        font-size: 0.9rem; /* Slightly smaller text on tablets */
+    }
+
+    .financials th, .financials td {
+        padding: 8px; /* Reduced padding for better fit */
+    }
+
+    .financials h2 {
+        font-size: 1.8rem; /* Smaller heading on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack tables for smaller screens (mobile view) */
+    .financials table {
+        font-size: 0.85rem; /* Smaller font size on mobile */
+    }
+
+    .financials th, .financials td {
+        padding: 6px; /* Further reduce padding for small screens */
+    }
+
+    .financials h2 {
+        font-size: 1.6rem; /* Even smaller heading for mobile */
+    }
+
+    /* Make the table scrollable horizontally on mobile */
+    .financials .table-container {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for very small screens */
+    .financials h2 {
+        font-size: 1.4rem; /* Further smaller heading */
+    }
+
+    .financials table {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+
+    .financials th, .financials td {
+        padding: 5px; /* Minimal padding for very small screens */
+    }
+}
+
+
+/* General Contact Section Styling */
+.contact-section {
+    background: #222222;
+    padding: 80px 10%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Heading Styling */
+.contact-heading {
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: #ff4500;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* Clean & professional */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Underline Effect for Heading */
+.contact-heading::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: rotate(-1.5deg);
+}
+
+/* Contact Content Layout */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    color: #ddd;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px orangered;
+}
+
+.contact-info img {
+    width: 100%;
+    max-width: 350px;   
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    min-width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Increased width */
+    border: 3px solid rgba(255, 100, 0, 0.7); /* Visible border */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: orangered;
+}
+
+/* Submit Button Styling */
+button {
+    background: orangered;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: darkorange;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+

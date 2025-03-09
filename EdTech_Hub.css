@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Header Style */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(51, 50, 50);
+    width: 100%;
+    padding: 10px 12%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: orangered;
+    text-shadow: 0 0 25px orangered, 0 0 50px orangered;
+    transform: scale(1.1);
+}
+
+span {
+    color: orangered;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;  /* Ensure the navbar is always visible */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: orangered;
+    border-bottom: 3px solid orangered;
+}
+
+/* Contact Button Styling */
+.contact {
+    padding: 10px 28px;
+    background-color: orangered;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: orangered;
+    box-shadow: 0 0 25px #ff4500;
+    color: white;
+}
+
+.contact:active {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px #ff4500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+    /* Navbar behavior for mobile */
+    .navbar {
+        display: block; /* Display navbar as block */
+        width: 100%;
+        padding: 10px 0;
+        background: rgb(51, 50, 50);
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        text-align: center;
+        display: block; /* Make navbar items stack vertically */
+        width: 100%;
+    }
+
+    /* Contact button adjustment */
+    .contact {
+        padding: 8px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .contact {
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+}
+
+
+
+.home {
+    background: black;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 20px;
+    background-image: url(edtech1.jpg);
+}
+
+.homec {
+    max-width: 800px;
+}
+
+.homec h3 {
+    font-size: 42px;
+}
+
+.homec h1 {
+    font-size: 62px;
+    line-height: 1.2;
+    margin: 30px;
+}
+
+.homec p {
+    font-size: 25px;
+    margin: 35px 30px 35px;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: orangered; /* Gradient background */
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding-right: 30px;
+}
+
+.about-btn:hover {
+    box-shadow: orange;
+    background: orangered;
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.about-btn:active {
+    transform: scale(0.95); /* Pressed effect */
+}
+
+
+/* Layout for the collage and text */
+.about-images,
+.about-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Main wrapper to align both elements */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+    background: #222222;
+}
+
+/* Left Side - Collage */
+.about-images {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Image styling */
+.about-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.2);
+}
+
+/* Hover Effect */
+.about-images img:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 25px rgba(255, 69, 0, 0.9);
+}
+
+/* Right Side - Text */
+.about-content {
+    width: 45%;
+    color: #ddd;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Heading Style */
+.about-content h2 {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    font-size: 32px; /* Make heading slightly smaller */
+    color: #ff4500;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    position: relative; /* Needed for absolute positioning */
+    display: inline-block; /* Keeps underline within the heading area */
+}
+
+/* Adjusted curved underline */
+.about-content h2::after {
+    content: "";
+    display: block;
+    width: 60%; /* Reduce underline width */
+    height: 4px; /* Make it thinner */
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: -8px; /* Keep it closer to the heading */
+    left: 20%; /* Center it */
+    transform: rotate(-2deg); /* Slightly tilted */
+    margin-bottom: 2%;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-images,
+    .about-content {
+        width: 100%;
+    }
+
+    .about-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* About Section Styling */
+#about {
+    background-color: #121212; /* Dark background */
+    color: #fff;
+    padding: 80px 10%;
+}
+
+.website-architect-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Left Side: Text Content */
+.website-architect-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+/* Heading Styling */
+.website-architect-text h2,
+.website-architect-text h3,
+.website-architect-text h4 {
+    font-size: 25px;
+    color: orangered;
+    margin-bottom: 20px;
+}
+
+/* Curved Underline for Main Heading */
+.website-architect-text h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center; /* Ensures text is centered */
+    width: 100%;
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center; /* Centers flex content */
+    align-items: center;
+}
+
+
+.website-architect-text h2::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: rotate(-1.5deg);
+}
+
+/* Paragraphs */
+.website-architect-text p {
+    font-size: 1.4rem; /* Increased font size */
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Lists */
+.frustrations, .solutions {
+    list-style: none;
+    padding: 0;
+}
+
+.frustrations li, .solutions li {
+    font-size: 1.3rem; /* Slightly larger */
+    margin-bottom: 10px;
+}
+
+/* Right Side: Scrolling Image Column */
+.website-architect-images {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40%;
+    height: auto;
+    padding-left: 40px;
+    margin-top: 200px;
+    
+    /* Make image sticky and scroll within the section */
+    position: sticky;
+    top: 20px; /* Adjust spacing from top */
+    align-self: flex-start; /* Keeps it inside the section */
+}
+
+/* Image Styling with Shadow */
+.website-architect-images img {
+    width: 100%;
+    max-width: 400px; /* Slightly larger */
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.5); /* Initial orangered shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Add Shadow Effect When Scrolling */
+.website-architect-images img:hover,
+.website-architect-images img.scrolled {
+    transform: scale(1.07);
+    box-shadow: 0px 8px 20px rgba(255, 69, 0, 0.8); /* Larger orangered shadow */
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .website-architect-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .website-architect-text, .website-architect-images {
+        max-width: 100%;
+    }
+
+    .website-architect-images {
+        max-width: 80%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .website-architect-text h2 {
+        font-size: 3rem;
+    }
+
+    .website-architect-text p {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.companies {
+    text-align: center;
+    padding: 80px 8%;
+    background: #222222;
+    color: white;
+}
+
+.companies h2 {
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: #ff4500;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* Clean & professional */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Curved underline effect */
+.companies h2::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: rotate(-1.5deg);
+}
+
+
+/* Flex container for cards */
+.companies-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Company card */
+.company-card {
+    background: #1a1a1a ;
+    padding: 25px;
+    border-radius: 12px;
+    width: 270px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.2);
+}
+
+/* Hover effect for cards */
+.company-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 25px rgba(255, 69, 0, 0.9);
+}
+
+/* Company logo - Increased size */
+.company-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: fill;
+    margin-bottom: 15px;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Logo hover effect - Slight enlargement */
+.company-card:hover img {
+    transform: scale(1.2);
+}
+
+
+/* Company name */
+.company-card h3 {
+    font-size: 24px;
+    color: orangered;
+    margin-bottom: 12px;
+}
+
+/* Company description */
+.company-card p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+
+/* Button styling */
+.company-card .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    background: orangered;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 10px rgba(255, 69, 0, 0.5);
+}
+
+/* Button hover effect */
+.company-card .btn:hover {
+    background: orange;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .companies-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .company-card {
+        width: 85%;
+    }
+}
+
+.freelancing {
+    padding: 60px 20px;
+    background-color: #111111; /* Dark background for the freelancing section */
+}
+
+.freelancing h2 {
+    padding-top: 15px;
+    text-align: center;
+    color: #ff4500; /* Orange-red color */
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.freelancing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styling for Content */
+.freelancing-content {
+    background-color: #222222; /* Slightly lighter black for content background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slight shadow effect */
+    margin-bottom: 40px;
+}
+
+.freelancing-content h3 {
+    font-size: 28px;
+    color: #ff4500; /* Bright color for headings */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.freelancing-content p {
+    font-size: 18px;
+    color: #e0e0e0; /* Light grey for paragraph text */
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.freelancing-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.freelancing-content ul li {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #ffbb33; /* Yellow-orange for list items */
+    display: flex;
+    align-items: center;
+}
+
+.freelancing-content ul li::before {
+    content: "✔️";
+    margin-right: 10px;
+}
+
+/* General Styles for Videos */
+.login-video iframe {
+    width: 80%;  /* Adjust the width to 80% of the container */
+    height: 300px; /* Set a fixed height for the videos */
+    border: none;
+    margin: 20px auto;
+    display: block;  /* Center the iframe */
+}
+
+/* Responsive Video Adjustment */
+@media (max-width: 768px) {
+    .login-video iframe {
+        width: 100%;  /* Make the video responsive on smaller screens */
+        height: 250px; /* Reduce the height for small screens */
+    }
+}
+
+
+/* Button Styles */
+.btn-next, .btn-prev {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #ff4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-next:hover, .btn-prev:hover {
+    background-color: #e63e00;
+}
+
+.btn-next {
+    float: right;
+}
+
+.btn-prev {
+    float: left;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    border-bottom: 1px solid #444;
+}
+
+table th {
+    background-color: #333333;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #444444;
+}
+
+/* Image Styling */
+.freelancing-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.freelancing-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+    .freelancing h2 {
+        font-size: 32px;
+    }
+
+    .freelancing-content h3 {
+        font-size: 24px;
+    }
+
+    .freelancing-content p, .freelancing-content ul li {
+        font-size: 16px;
+    }
+
+    .btn-next, .btn-prev {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .freelancing-container {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .freelancing h2 {
+        font-size: 28px;
+    }
+
+    .freelancing-content h3 {
+        font-size: 22px;
+    }
+
+    .freelancing-content p, .freelancing-content ul li {
+        font-size: 14px;
+    }
+
+    .freelancing-images {
+        justify-content: center;
+    }
+
+    .btn-next, .btn-prev {
+        font-size: 14px;
+        padding: 8px 15px;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .freelancing h2 {
+        font-size: 24px;
+    }
+
+    .freelancing-content h3 {
+        font-size: 20px;
+    }
+
+    .freelancing-content p, .freelancing-content ul li {
+        font-size: 12px;
+    }
+
+    .btn-next, .btn-prev {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .freelancing-container {
+        padding: 0 10px;
+    }
+
+    .freelancing-images img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* General Contact Section Styling */
+.contact-section {
+    background: #222222;
+    padding: 80px 10%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Heading Styling */
+.contact-heading {
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: #ff4500;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* Clean & professional */
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Underline Effect for Heading */
+.contact-heading::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff4500, #ff9900);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: rotate(-1.5deg);
+}
+
+/* Contact Content Layout */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    color: #ddd;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px orangered;
+}
+
+.contact-info img {
+    width: 100%;
+    max-width: 350px;   
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    min-width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Increased width */
+    border: 3px solid rgba(255, 100, 0, 0.7); /* Visible border */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: orangered;
+}
+
+/* Submit Button Styling */
+button {
+    background: orangered;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: darkorange;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
