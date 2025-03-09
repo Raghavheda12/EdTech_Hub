@@ -140,7 +140,7 @@ body {
     padding: 30px 5%; /* Reduces left padding for closer alignment */
     color: white;
     position: relative;
-    background: url('microsoft.jpg') no-repeat center center/cover;
+    background: url('Microsoft.jpg') no-repeat center center/cover;
 }
 
 /* Dark Overlay Effect */
