@@ -926,16 +926,46 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .contact-content {
         flex-direction: column;
         text-align: center;
+        padding: 20px; /* Adds spacing on mobile */
     }
 
     .contact-info,
     .contact-form {
         width: 100%;
         max-width: 100%;
+        padding: 10px;
+    }
+
+    /* Ensure input fields do not overflow */
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+
+    /* Make the button full-width */
+    button {
+        width: 100%;
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    .contact-content {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem; /* Adjust font size for readability */
+        padding: 10px; /* Reduce padding */
+    }
+
+    button {
+        font-size: 1rem; /* Adjust button size */
+        padding: 10px;
     }
 }
